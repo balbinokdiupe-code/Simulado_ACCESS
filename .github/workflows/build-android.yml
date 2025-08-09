@@ -2,25 +2,27 @@ name: Build Cordova Android (debug)
 
 on:
   workflow_dispatch:
+  push:
+    branches: [ main ]
+
+env:
+  ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
-    env:
-      ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Node
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '18'
           cache: 'npm'
 
-      - name: Set up Java 17 (Temurin)
+      - name: Setup Java 17 (Temurin)
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
@@ -30,21 +32,18 @@ jobs:
       - name: Install Cordova CLI
         run: npm i -g cordova@12
 
-      # Instala cmdline-tools;latest e SDKs necessários
+      # SDK + licenças para cordova-android@11 (AGP 7.x / SDK 32)
       - name: Install Android SDK components
         run: |
           sudo mkdir -p "$ANDROID_SDK_ROOT"
           sudo chown -R "$USER":"$USER" "$ANDROID_SDK_ROOT"
-          echo y | "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" --version >/dev/null 2>&1 || true
-          yes | sdkmanager "cmdline-tools;latest"
           yes | sdkmanager --licenses
-          yes | sdkmanager "platform-tools" "platforms;android-32" "build-tools;32.0.0"
+          yes | sdkmanager "cmdline-tools;latest" "platform-tools" "platforms;android-32" "build-tools;32.0.0"
 
       - name: Install project deps
-        run: |
-          npm ci || npm i
+        run: npm ci || npm i
 
-      - name: Add platform & build (android@11)
+      - name: Add platform & build
         run: |
           cordova platform rm android || true
           cordova platform add android@11
