@@ -1,0 +1,53 @@
+name: Build Cordova Android (debug)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+
+    env:
+      ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+
+      - name: Setup Java 17 (Temurin)
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      # Instala o CLI do Cordova e dependências do projeto (dentro de cordova/)
+      - name: Install deps
+        run: |
+          npm i -g cordova@12
+          cd cordova
+          # se o seu projeto tiver package.json dentro de cordova/, isso instala os pacotes
+          if [ -f package.json ]; then
+            npm ci || npm install
+          fi
+
+      # Comandos Cordova – note o working-directory
+      - name: Cordova Android build (debug)
+        working-directory: cordova
+        run: |
+          cordova telemetry off || true
+          cordova platform rm android || true
+          cordova platform add android@11
+          cordova build android --debug --no-interactive
+
+      # Publica o APK como artefato para download
+      - name: Upload APK (debug)
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-debug-apk
+          path: cordova/platforms/android/app/build/outputs/apk/debug/app-debug.apk
