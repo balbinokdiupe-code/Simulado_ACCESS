@@ -1,0 +1,237 @@
+build	Set up job	﻿2025-08-09T22:22:00.7481409Z Current runner version: '2.327.1'
+build	Set up job	2025-08-09T22:22:00.7507090Z ##[group]Operating System
+build	Set up job	2025-08-09T22:22:00.7507835Z Ubuntu
+build	Set up job	2025-08-09T22:22:00.7508274Z 24.04.2
+build	Set up job	2025-08-09T22:22:00.7508870Z LTS
+build	Set up job	2025-08-09T22:22:00.7509394Z ##[endgroup]
+build	Set up job	2025-08-09T22:22:00.7509923Z ##[group]Runner Image
+build	Set up job	2025-08-09T22:22:00.7510589Z Image: ubuntu-24.04
+build	Set up job	2025-08-09T22:22:00.7511324Z Version: 20250804.2.0
+build	Set up job	2025-08-09T22:22:00.7512332Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250804.2/images/ubuntu/Ubuntu2404-Readme.md
+build	Set up job	2025-08-09T22:22:00.7513711Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250804.2
+build	Set up job	2025-08-09T22:22:00.7514619Z ##[endgroup]
+build	Set up job	2025-08-09T22:22:00.7515123Z ##[group]Runner Image Provisioner
+build	Set up job	2025-08-09T22:22:00.7515741Z 2.0.449.1
+build	Set up job	2025-08-09T22:22:00.7516211Z ##[endgroup]
+build	Set up job	2025-08-09T22:22:00.7517228Z ##[group]GITHUB_TOKEN Permissions
+build	Set up job	2025-08-09T22:22:00.7519065Z Contents: read
+build	Set up job	2025-08-09T22:22:00.7519671Z Metadata: read
+build	Set up job	2025-08-09T22:22:00.7520177Z Packages: read
+build	Set up job	2025-08-09T22:22:00.7521350Z ##[endgroup]
+build	Set up job	2025-08-09T22:22:00.7523771Z Secret source: Actions
+build	Set up job	2025-08-09T22:22:00.7525180Z Prepare workflow directory
+build	Set up job	2025-08-09T22:22:00.8062424Z Prepare all required actions
+build	Set up job	2025-08-09T22:22:00.8117387Z Getting action download info
+build	Set up job	2025-08-09T22:22:01.1564297Z ##[group]Download immutable action package 'actions/checkout@v4'
+build	Set up job	2025-08-09T22:22:01.1565261Z Version: 4.2.2
+build	Set up job	2025-08-09T22:22:01.1566387Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+build	Set up job	2025-08-09T22:22:01.1567557Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+build	Set up job	2025-08-09T22:22:01.1568219Z ##[endgroup]
+build	Set up job	2025-08-09T22:22:01.2327484Z ##[group]Download immutable action package 'actions/setup-node@v4'
+build	Set up job	2025-08-09T22:22:01.2328900Z Version: 4.4.0
+build	Set up job	2025-08-09T22:22:01.2330235Z Digest: sha256:9427cefe82346e992fb5b949e3569b39d537ae41aa3086483b14eceebfc16bc1
+build	Set up job	2025-08-09T22:22:01.2332495Z Source commit SHA: 49933ea5288caeca8642d1e84afbd3f7d6820020
+build	Set up job	2025-08-09T22:22:01.2333699Z ##[endgroup]
+build	Set up job	2025-08-09T22:22:01.3257932Z ##[group]Download immutable action package 'actions/setup-java@v4'
+build	Set up job	2025-08-09T22:22:01.3258721Z Version: 4.7.1
+build	Set up job	2025-08-09T22:22:01.3259456Z Digest: sha256:23223d64943473efb4336f60463c0429cd4f422cd5fc6c48a5cf0d5907c1aeac
+build	Set up job	2025-08-09T22:22:01.3260461Z Source commit SHA: c5195efecf7bdfc987ee8bae7a71cb8b11521c00
+build	Set up job	2025-08-09T22:22:01.3261381Z ##[endgroup]
+build	Set up job	2025-08-09T22:22:01.5982152Z ##[group]Download immutable action package 'actions/upload-artifact@v4'
+build	Set up job	2025-08-09T22:22:01.5983056Z Version: 4.6.2
+build	Set up job	2025-08-09T22:22:01.5983769Z Digest: sha256:290722aa3281d5caf23d0acdc3dbeb3424786a1a01a9cc97e72f147225e37c38
+build	Set up job	2025-08-09T22:22:01.5984713Z Source commit SHA: ea165f8d65b6e75b540449e92b4886f43607fa02
+build	Set up job	2025-08-09T22:22:01.5985465Z ##[endgroup]
+build	Set up job	2025-08-09T22:22:01.7983866Z Complete job name: build
+build	Checkout	﻿2025-08-09T22:22:01.8675598Z ##[group]Run actions/checkout@v4
+build	Checkout	2025-08-09T22:22:01.8676437Z with:
+build	Checkout	2025-08-09T22:22:01.8676872Z   repository: balbinokdiupe-code/Simulado_ACCESS
+build	Checkout	2025-08-09T22:22:01.8677620Z   token: ***
+build	Checkout	2025-08-09T22:22:01.8677979Z   ssh-strict: true
+build	Checkout	2025-08-09T22:22:01.8678362Z   ssh-user: git
+build	Checkout	2025-08-09T22:22:01.8678744Z   persist-credentials: true
+build	Checkout	2025-08-09T22:22:01.8679173Z   clean: true
+build	Checkout	2025-08-09T22:22:01.8679560Z   sparse-checkout-cone-mode: true
+build	Checkout	2025-08-09T22:22:01.8680024Z   fetch-depth: 1
+build	Checkout	2025-08-09T22:22:01.8680402Z   fetch-tags: false
+build	Checkout	2025-08-09T22:22:01.8681343Z   show-progress: true
+build	Checkout	2025-08-09T22:22:01.8681802Z   lfs: false
+build	Checkout	2025-08-09T22:22:01.8682165Z   submodules: false
+build	Checkout	2025-08-09T22:22:01.8682557Z   set-safe-directory: true
+build	Checkout	2025-08-09T22:22:01.8683306Z env:
+build	Checkout	2025-08-09T22:22:01.8683731Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+build	Checkout	2025-08-09T22:22:01.8684239Z ##[endgroup]
+build	Checkout	2025-08-09T22:22:02.0279902Z Syncing repository: balbinokdiupe-code/Simulado_ACCESS
+build	Checkout	2025-08-09T22:22:02.0282309Z ##[group]Getting Git version info
+build	Checkout	2025-08-09T22:22:02.0283313Z Working directory is '/home/runner/work/Simulado_ACCESS/Simulado_ACCESS'
+build	Checkout	2025-08-09T22:22:02.0284597Z [command]/usr/bin/git version
+build	Checkout	2025-08-09T22:22:02.0323119Z git version 2.50.1
+build	Checkout	2025-08-09T22:22:02.0350533Z ##[endgroup]
+build	Checkout	2025-08-09T22:22:02.0365051Z Temporarily overriding HOME='/home/runner/work/_temp/8f31c54c-4d46-4fd6-a8ce-f7ba666188ab' before making global git config changes
+build	Checkout	2025-08-09T22:22:02.0366667Z Adding repository directory to the temporary git global config as a safe directory
+build	Checkout	2025-08-09T22:22:02.0378125Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Simulado_ACCESS/Simulado_ACCESS
+build	Checkout	2025-08-09T22:22:02.0413160Z Deleting the contents of '/home/runner/work/Simulado_ACCESS/Simulado_ACCESS'
+build	Checkout	2025-08-09T22:22:02.0416622Z ##[group]Initializing the repository
+build	Checkout	2025-08-09T22:22:02.0420881Z [command]/usr/bin/git init /home/runner/work/Simulado_ACCESS/Simulado_ACCESS
+build	Checkout	2025-08-09T22:22:02.0509742Z hint: Using 'master' as the name for the initial branch. This default branch name
+build	Checkout	2025-08-09T22:22:02.0511670Z hint: is subject to change. To configure the initial branch name to use in all
+build	Checkout	2025-08-09T22:22:02.0513250Z hint: of your new repositories, which will suppress this warning, call:
+build	Checkout	2025-08-09T22:22:02.0514374Z hint:
+build	Checkout	2025-08-09T22:22:02.0514875Z hint: 	git config --global init.defaultBranch <name>
+build	Checkout	2025-08-09T22:22:02.0515468Z hint:
+build	Checkout	2025-08-09T22:22:02.0516010Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+build	Checkout	2025-08-09T22:22:02.0516924Z hint: 'development'. The just-created branch can be renamed via this command:
+build	Checkout	2025-08-09T22:22:02.0517629Z hint:
+build	Checkout	2025-08-09T22:22:02.0518009Z hint: 	git branch -m <name>
+build	Checkout	2025-08-09T22:22:02.0518562Z hint:
+build	Checkout	2025-08-09T22:22:02.0519472Z hint: Disable this message with "git config set advice.defaultBranchName false"
+build	Checkout	2025-08-09T22:22:02.0520579Z Initialized empty Git repository in /home/runner/work/Simulado_ACCESS/Simulado_ACCESS/.git/
+build	Checkout	2025-08-09T22:22:02.0525194Z [command]/usr/bin/git remote add origin https://github.com/balbinokdiupe-code/Simulado_ACCESS
+build	Checkout	2025-08-09T22:22:02.0562852Z ##[endgroup]
+build	Checkout	2025-08-09T22:22:02.0563598Z ##[group]Disabling automatic garbage collection
+build	Checkout	2025-08-09T22:22:02.0567502Z [command]/usr/bin/git config --local gc.auto 0
+build	Checkout	2025-08-09T22:22:02.0601842Z ##[endgroup]
+build	Checkout	2025-08-09T22:22:02.0602511Z ##[group]Setting up auth
+build	Checkout	2025-08-09T22:22:02.0611269Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+build	Checkout	2025-08-09T22:22:02.0645049Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build	Checkout	2025-08-09T22:22:02.0931652Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build	Checkout	2025-08-09T22:22:02.0963826Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build	Checkout	2025-08-09T22:22:02.1194668Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+build	Checkout	2025-08-09T22:22:02.1237722Z ##[endgroup]
+build	Checkout	2025-08-09T22:22:02.1238997Z ##[group]Fetching the repository
+build	Checkout	2025-08-09T22:22:02.1248375Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +538dcbde7a644186a10e3610c07fe1e1023020e1:refs/remotes/origin/main
+build	Checkout	2025-08-09T22:22:02.3292980Z From https://github.com/balbinokdiupe-code/Simulado_ACCESS
+build	Checkout	2025-08-09T22:22:02.3294431Z  * [new ref]         538dcbde7a644186a10e3610c07fe1e1023020e1 -> origin/main
+build	Checkout	2025-08-09T22:22:02.3318605Z ##[endgroup]
+build	Checkout	2025-08-09T22:22:02.3319743Z ##[group]Determining the checkout info
+build	Checkout	2025-08-09T22:22:02.3321447Z ##[endgroup]
+build	Checkout	2025-08-09T22:22:02.3326538Z [command]/usr/bin/git sparse-checkout disable
+build	Checkout	2025-08-09T22:22:02.3368417Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+build	Checkout	2025-08-09T22:22:02.3397254Z ##[group]Checking out the ref
+build	Checkout	2025-08-09T22:22:02.3401944Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+build	Checkout	2025-08-09T22:22:02.3444310Z Switched to a new branch 'main'
+build	Checkout	2025-08-09T22:22:02.3447273Z branch 'main' set up to track 'origin/main'.
+build	Checkout	2025-08-09T22:22:02.3452955Z ##[endgroup]
+build	Checkout	2025-08-09T22:22:02.3488375Z [command]/usr/bin/git log -1 --format=%H
+build	Checkout	2025-08-09T22:22:02.3511170Z 538dcbde7a644186a10e3610c07fe1e1023020e1
+build	Setup Node	﻿2025-08-09T22:22:02.3733465Z ##[group]Run actions/setup-node@v4
+build	Setup Node	2025-08-09T22:22:02.3734010Z with:
+build	Setup Node	2025-08-09T22:22:02.3734351Z   node-version: 18
+build	Setup Node	2025-08-09T22:22:02.3734736Z   cache: npm
+build	Setup Node	2025-08-09T22:22:02.3735096Z   always-auth: false
+build	Setup Node	2025-08-09T22:22:02.3735470Z   check-latest: false
+build	Setup Node	2025-08-09T22:22:02.3735993Z   token: ***
+build	Setup Node	2025-08-09T22:22:02.3736331Z env:
+build	Setup Node	2025-08-09T22:22:02.3736710Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+build	Setup Node	2025-08-09T22:22:02.3737208Z ##[endgroup]
+build	Setup Node	2025-08-09T22:22:02.5517937Z Found in cache @ /opt/hostedtoolcache/node/18.20.8/x64
+build	Setup Node	2025-08-09T22:22:02.5526820Z ##[group]Environment details
+build	Setup Node	2025-08-09T22:22:04.8998884Z node: v18.20.8
+build	Setup Node	2025-08-09T22:22:04.9000279Z npm: 10.8.2
+build	Setup Node	2025-08-09T22:22:04.9000652Z yarn: 1.22.22
+build	Setup Node	2025-08-09T22:22:04.9001780Z ##[endgroup]
+build	Setup Node	2025-08-09T22:22:04.9021308Z [command]/opt/hostedtoolcache/node/18.20.8/x64/bin/npm config get cache
+build	Setup Node	2025-08-09T22:22:05.2395014Z /home/runner/.npm
+build	Setup Node	2025-08-09T22:22:05.4394334Z npm cache is not found
+build	Setup Java 17 (Temurin)	﻿2025-08-09T22:22:05.4653871Z ##[group]Run actions/setup-java@v4
+build	Setup Java 17 (Temurin)	2025-08-09T22:22:05.4654184Z with:
+build	Setup Java 17 (Temurin)	2025-08-09T22:22:05.4654369Z   distribution: temurin
+build	Setup Java 17 (Temurin)	2025-08-09T22:22:05.4654572Z   java-version: 17
+build	Setup Java 17 (Temurin)	2025-08-09T22:22:05.4654761Z   java-package: jdk
+build	Setup Java 17 (Temurin)	2025-08-09T22:22:05.4654945Z   check-latest: false
+build	Setup Java 17 (Temurin)	2025-08-09T22:22:05.4655154Z   server-id: github
+build	Setup Java 17 (Temurin)	2025-08-09T22:22:05.4655354Z   server-username: GITHUB_ACTOR
+build	Setup Java 17 (Temurin)	2025-08-09T22:22:05.4655594Z   server-password: GITHUB_TOKEN
+build	Setup Java 17 (Temurin)	2025-08-09T22:22:05.4655827Z   overwrite-settings: true
+build	Setup Java 17 (Temurin)	2025-08-09T22:22:05.4656033Z   job-status: success
+build	Setup Java 17 (Temurin)	2025-08-09T22:22:05.4656347Z   token: ***
+build	Setup Java 17 (Temurin)	2025-08-09T22:22:05.4656512Z env:
+build	Setup Java 17 (Temurin)	2025-08-09T22:22:05.4656704Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+build	Setup Java 17 (Temurin)	2025-08-09T22:22:05.4656974Z ##[endgroup]
+build	Setup Java 17 (Temurin)	2025-08-09T22:22:05.6625733Z ##[group]Installed distributions
+build	Setup Java 17 (Temurin)	2025-08-09T22:22:05.6672238Z Resolved Java 17.0.16+8 from tool-cache
+build	Setup Java 17 (Temurin)	2025-08-09T22:22:05.6672750Z Setting Java 17.0.16+8 as the default
+build	Setup Java 17 (Temurin)	2025-08-09T22:22:05.6680600Z Creating toolchains.xml for JDK version 17 from temurin
+build	Setup Java 17 (Temurin)	2025-08-09T22:22:05.6756851Z Writing to /home/runner/.m2/toolchains.xml
+build	Setup Java 17 (Temurin)	2025-08-09T22:22:05.6757404Z 
+build	Setup Java 17 (Temurin)	2025-08-09T22:22:05.6757652Z Java configuration:
+build	Setup Java 17 (Temurin)	2025-08-09T22:22:05.6758050Z   Distribution: temurin
+build	Setup Java 17 (Temurin)	2025-08-09T22:22:05.6758425Z   Version: 17.0.16+8
+build	Setup Java 17 (Temurin)	2025-08-09T22:22:05.6759340Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Setup Java 17 (Temurin)	2025-08-09T22:22:05.6761679Z 
+build	Setup Java 17 (Temurin)	2025-08-09T22:22:05.6762204Z ##[endgroup]
+build	Setup Java 17 (Temurin)	2025-08-09T22:22:05.6768744Z Creating settings.xml with server-id: github
+build	Setup Java 17 (Temurin)	2025-08-09T22:22:05.6782827Z Writing to /home/runner/.m2/settings.xml
+build	Install deps	﻿2025-08-09T22:22:05.6885545Z ##[group]Run npm ci || npm install
+build	Install deps	2025-08-09T22:22:05.6885925Z [36;1mnpm ci || npm install[0m
+build	Install deps	2025-08-09T22:22:05.6886194Z [36;1mnpm i -g cordova@12[0m
+build	Install deps	2025-08-09T22:22:05.6954754Z shell: /usr/bin/bash -e {0}
+build	Install deps	2025-08-09T22:22:05.6955024Z env:
+build	Install deps	2025-08-09T22:22:05.6955236Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+build	Install deps	2025-08-09T22:22:05.6955624Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Install deps	2025-08-09T22:22:05.6956103Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Install deps	2025-08-09T22:22:05.6956450Z ##[endgroup]
+build	Install deps	2025-08-09T22:22:08.2964548Z npm warn deprecated q@1.5.1: You or someone you depend on is using Q, the JavaScript Promise library that gave JavaScript developers strong feelings about promises. They can almost certainly migrate to the native JavaScript promise now. Thank you literally everyone for joining me in this bet against the odds. Be excellent to each other.
+build	Install deps	2025-08-09T22:22:08.2966686Z npm warn deprecated
+build	Install deps	2025-08-09T22:22:08.2967598Z npm warn deprecated (For a CapTP with native promises, see @endo/eventual-send and @endo/captp)
+build	Install deps	2025-08-09T22:22:08.5875392Z 
+build	Install deps	2025-08-09T22:22:08.5876159Z added 76 packages, and audited 77 packages in 3s
+build	Install deps	2025-08-09T22:22:08.5876646Z 
+build	Install deps	2025-08-09T22:22:08.5876956Z 8 packages are looking for funding
+build	Install deps	2025-08-09T22:22:08.5877441Z   run `npm fund` for details
+build	Install deps	2025-08-09T22:22:08.5886186Z 
+build	Install deps	2025-08-09T22:22:08.5886754Z found 0 vulnerabilities
+build	Install deps	2025-08-09T22:22:19.1657869Z npm warn deprecated q@1.5.1: You or someone you depend on is using Q, the JavaScript Promise library that gave JavaScript developers strong feelings about promises. They can almost certainly migrate to the native JavaScript promise now. Thank you literally everyone for joining me in this bet against the odds. Be excellent to each other.
+build	Install deps	2025-08-09T22:22:19.1660169Z npm warn deprecated
+build	Install deps	2025-08-09T22:22:19.1661219Z npm warn deprecated (For a CapTP with native promises, see @endo/eventual-send and @endo/captp)
+build	Install deps	2025-08-09T22:22:19.3306918Z npm warn deprecated @npmcli/move-file@2.0.1: This functionality has been moved to @npmcli/fs
+build	Install deps	2025-08-09T22:22:19.3564383Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+build	Install deps	2025-08-09T22:22:19.6978858Z npm warn deprecated har-validator@5.1.5: this library is no longer supported
+build	Install deps	2025-08-09T22:22:19.8394981Z npm warn deprecated read-package-json@6.0.4: This package is no longer supported. Please use @npmcli/package-json instead.
+build	Install deps	2025-08-09T22:22:19.9714128Z npm warn deprecated are-we-there-yet@4.0.2: This package is no longer supported.
+build	Install deps	2025-08-09T22:22:20.1203876Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+build	Install deps	2025-08-09T22:22:20.2087206Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+build	Install deps	2025-08-09T22:22:20.2526164Z npm warn deprecated glob@8.1.0: Glob versions prior to v9 are no longer supported
+build	Install deps	2025-08-09T22:22:20.3552207Z npm warn deprecated gauge@5.0.2: This package is no longer supported.
+build	Install deps	2025-08-09T22:22:20.7246278Z npm warn deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+build	Install deps	2025-08-09T22:22:20.7951945Z npm warn deprecated stringify-package@1.0.1: This module is not used anymore, and has been replaced by @npmcli/package-json
+build	Install deps	2025-08-09T22:22:20.9024086Z npm warn deprecated dep-graph@1.1.0: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+build	Install deps	2025-08-09T22:22:20.9042633Z npm warn deprecated npmlog@6.0.2: This package is no longer supported.
+build	Install deps	2025-08-09T22:22:20.9046004Z npm warn deprecated are-we-there-yet@3.0.1: This package is no longer supported.
+build	Install deps	2025-08-09T22:22:20.9170079Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+build	Install deps	2025-08-09T22:22:20.9396970Z npm warn deprecated npmlog@7.0.1: This package is no longer supported.
+build	Install deps	2025-08-09T22:22:20.9718929Z npm warn deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
+build	Install deps	2025-08-09T22:22:21.0237889Z npm warn deprecated gauge@4.0.4: This package is no longer supported.
+build	Install deps	2025-08-09T22:22:22.0273671Z 
+build	Install deps	2025-08-09T22:22:22.0274441Z added 556 packages in 13s
+build	Install deps	2025-08-09T22:22:22.0275068Z 
+build	Install deps	2025-08-09T22:22:22.0275592Z 66 packages are looking for funding
+build	Install deps	2025-08-09T22:22:22.0276134Z   run `npm fund` for details
+build	Cordova Android build (debug)	﻿2025-08-09T22:22:22.0607941Z ##[group]Run cordova telemetry off || true
+build	Cordova Android build (debug)	2025-08-09T22:22:22.0608308Z [36;1mcordova telemetry off || true[0m
+build	Cordova Android build (debug)	2025-08-09T22:22:22.0608600Z [36;1mcordova platform rm android || true[0m
+build	Cordova Android build (debug)	2025-08-09T22:22:22.0608870Z [36;1mcordova platform add android@11[0m
+build	Cordova Android build (debug)	2025-08-09T22:22:22.0609188Z [36;1mcordova build android --debug --no-interactive[0m
+build	Cordova Android build (debug)	2025-08-09T22:22:22.0653227Z shell: /usr/bin/bash -e {0}
+build	Cordova Android build (debug)	2025-08-09T22:22:22.0653461Z env:
+build	Cordova Android build (debug)	2025-08-09T22:22:22.0653668Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+build	Cordova Android build (debug)	2025-08-09T22:22:22.0654046Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Cordova Android build (debug)	2025-08-09T22:22:22.0654642Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+build	Cordova Android build (debug)	2025-08-09T22:22:22.0654981Z ##[endgroup]
+build	Cordova Android build (debug)	2025-08-09T22:22:23.5670090Z Current working directory is not a Cordova-based project.
+build	Cordova Android build (debug)	2025-08-09T22:22:24.1832989Z Current working directory is not a Cordova-based project.
+build	Cordova Android build (debug)	2025-08-09T22:22:24.1951475Z ##[error]Process completed with exit code 1.
+build	Post Setup Java 17 (Temurin)	﻿2025-08-09T22:22:24.2053849Z Post job cleanup.
+build	Post Checkout	﻿2025-08-09T22:22:24.3797720Z Post job cleanup.
+build	Post Checkout	2025-08-09T22:22:24.4742873Z [command]/usr/bin/git version
+build	Post Checkout	2025-08-09T22:22:24.4781338Z git version 2.50.1
+build	Post Checkout	2025-08-09T22:22:24.4830031Z Temporarily overriding HOME='/home/runner/work/_temp/fb5bcafe-8e30-4cb0-86a8-93254c8e2980' before making global git config changes
+build	Post Checkout	2025-08-09T22:22:24.4831606Z Adding repository directory to the temporary git global config as a safe directory
+build	Post Checkout	2025-08-09T22:22:24.4836870Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Simulado_ACCESS/Simulado_ACCESS
+build	Post Checkout	2025-08-09T22:22:24.4878938Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+build	Post Checkout	2025-08-09T22:22:24.4911526Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build	Post Checkout	2025-08-09T22:22:24.5142680Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build	Post Checkout	2025-08-09T22:22:24.5163399Z http.https://github.com/.extraheader
+build	Post Checkout	2025-08-09T22:22:24.5176867Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+build	Post Checkout	2025-08-09T22:22:24.5210460Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build	Complete job	﻿2025-08-09T22:22:24.5540969Z Cleaning up orphan processes
