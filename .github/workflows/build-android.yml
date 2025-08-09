@@ -5,12 +5,11 @@ on:
   push:
     branches: [ main ]
 
-env:
-  ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
-
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    env:
+      ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
 
     steps:
       - name: Checkout
@@ -19,7 +18,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: 18
           cache: 'npm'
 
       - name: Setup Java 17 (Temurin)
@@ -27,23 +26,16 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
+          # NADA de cache aqui!
 
-      - name: Install Cordova CLI
-        run: npm i -g cordova@12
-
-      # SDK + licenças para cordova-android@11 (AGP 7.x / SDK 32)
-      - name: Install Android SDK components
+      - name: Install deps
         run: |
-          sudo mkdir -p "$ANDROID_SDK_ROOT"
-          sudo chown -R "$USER":"$USER" "$ANDROID_SDK_ROOT"
-          yes | sdkmanager --licenses
-          yes | sdkmanager "cmdline-tools;latest" "platform-tools" "platforms;android-32" "build-tools;32.0.0"
+          npm ci || npm install
+          npm i -g cordova@12
 
-      - name: Install project deps
-        run: npm ci || npm i
-
-      - name: Add platform & build
+      - name: Cordova Android build (debug)
         run: |
+          cordova telemetry off || true
           cordova platform rm android || true
           cordova platform add android@11
           cordova build android --debug --no-interactive
