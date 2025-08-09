@@ -1,30 +1,55 @@
+name: Build Cordova Android (debug)
 
-name: Build Cordova Android (debug) on: 
+on:
   workflow_dispatch:
-jobs: build: runs-on: ubuntu-24.04 env: 
-      ANDROID_SDK_ROOT: 
-      /usr/local/lib/android/sdk
-    steps: - name: Checkout uses: 
-        actions/checkout@v4
-      - name: Setup Node uses: 
-        actions/setup-node@v4 with:
-          node-version: 18 cache: npm - name: 
-      Setup Java 17 (Temurin)
-        uses: actions/setup-java@v4 with: 
-          distribution: temurin java-version: 
-          17
-      - name: Install deps run: | npm ci || 
-          npm install npm i -g cordova@12
-      # ⚠️ o app Cordova está em _build/app
-      - name: Cordova Android build (debug) 
-        working-directory: _build/app run: |
-          cordova telemetry off || true 
-          cordova platform rm android || true 
-          cordova platform add android@11 
-          cordova build android --debug 
-          --no-interactive
-      - name: Upload APK (debug) uses: 
-        actions/upload-artifact@v4 with:
-          name: app-debug-apk path: 
-          _build/app/platforms/android/app/build/outputs/apk/debug/app-debug.apk
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+
+    env:
+      ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+
+    # Tudo que for "run:" roda em _build/app
+    defaults:
+      run:
+        shell: bash
+        working-directory: _build/app
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+          # cache do npm baseado no package-lock da pasta do app
+          cache-dependency-path: _build/app/package-lock.json
+
+      - name: Setup Java 17 (Temurin)
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Install deps
+        run: |
+          npm ci || npm install
+          npm i -g cordova@12
+
+      - name: Cordova Android build (debug)
+        run: |
+          cordova telemetry off || true
+          cordova platform rm android || true
+          cordova platform add android@11
+          cordova build android --debug --no-interactive
+
+      - name: Upload APK (debug)
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-debug-apk
+          # caminho relativo à raiz do repositório
+          path: _build/app/platforms/android/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
