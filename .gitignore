@@ -1,0 +1,11 @@
+node_modules/
+plugins/
+platforms/
+www/
+package-lock.json
+.gradle/
+.cordova
+.DS_Store
+*.keystore
+*.jks
+*.p12
