@@ -1,33 +1,31 @@
-name: Build Cordova Android (debug)
-
-    steps: - name: Checkout on: uses: 
-actions/checkout@v4
-  workflow_dispatch: - name: Setup Node push: 
-  uses: actions/setup-node@v4
-    branches: [ main ] with: node-version: 18 
-          cache: 'npm'
-
-      - name: Setup Java 17 (Temurin) uses: 
-        actions/setup-java@v4 with:
-jobs: distribution: 'temurin' java-version: 
+name: Build Cordova Android (debug) on: 
+  workflow_dispatch: push:
+    branches: - main jobs: build: runs-on: 
+    ubuntu-24.04 env:
+      ANDROID_SDK_ROOT: 
+      /usr/local/lib/android/sdk
+    steps: - name: Checkout uses: 
+        actions/checkout@v4
+      - name: Setup Node uses: 
+        actions/setup-node@v4 with:
+          node-version: 18 cache: npm - name: 
+      Setup Java 17 (Temurin)
+        uses: actions/setup-java@v4 with: 
+          distribution: temurin java-version: 
           '17'
-  build: # NADA de cache aqui! runs-on: 
-    ubuntu-24.04 env: - name: Install deps
-      ANDROID_SDK_ROOT: /usr/local/lib/android/sdk        run: |
-          npm ci || npm install
-          npm i -g cordova@12
-working-directory: _build/app
-
-
-      - name: Cordova Android build (debug)
-        run: |
-          cordova telemetry off || true
-          cordova platform rm android || true
-          cordova platform add android@11
-          cordova build android --debug --no-interactive
-
-      - name: Upload APK (debug)
-        uses: actions/upload-artifact@v4
-        with:
-          name: app-debug-apk
-          path: platforms/android/app/build/outputs/apk/debug/app-debug.apk
+      - name: Install deps working-directory: 
+        _build/app run: |
+          npm ci || npm install npm i -g 
+          cordova@12
+      - name: Cordova Android build (debug) 
+        working-directory: _build/app run: |
+          cordova telemetry off || true 
+          cordova platform rm android || true 
+          cordova platform add android@11 
+          cordova build android --debug 
+          --no-interactive
+      - name: Upload APK (debug) uses: 
+        actions/upload-artifact@v4 with:
+          name: app-debug-apk path: 
+          _build/app/platforms/android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
