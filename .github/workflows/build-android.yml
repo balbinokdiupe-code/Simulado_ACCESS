@@ -1,5 +1,7 @@
  name: Build Cordova Android (debug)
- on: 
+ 
+
+on: 
    workflow_dispatch:
    push:
      branches:
