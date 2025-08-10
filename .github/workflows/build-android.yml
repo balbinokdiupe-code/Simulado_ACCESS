@@ -1,35 +1,19 @@
 name: Build Cordova Android (debug)
-nano .github/workflows/build-android.yml
-on:
-  workflow_dispatch:
-  push:
-    branches: [ main ]
 
-jobs:
-  build:
-    runs-on: ubuntu-24.04
-    env:
-      ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
+    steps: - name: Checkout on: uses: 
+actions/checkout@v4
+  workflow_dispatch: - name: Setup Node push: 
+  uses: actions/setup-node@v4
+    branches: [ main ] with: node-version: 18 
           cache: 'npm'
 
-      - name: Setup Java 17 (Temurin)
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'temurin'
-          java-version: '17'
-          # NADA de cache aqui!
-
-      - name: Install deps
-        run: |
+      - name: Setup Java 17 (Temurin) uses: 
+        actions/setup-java@v4 with:
+jobs: distribution: 'temurin' java-version: 
+          '17'
+  build: # NADA de cache aqui! runs-on: 
+    ubuntu-24.04 env: - name: Install deps
+      ANDROID_SDK_ROOT: /usr/local/lib/android/sdk        run: |
           npm ci || npm install
           npm i -g cordova@12
 working-directory: _build/app
