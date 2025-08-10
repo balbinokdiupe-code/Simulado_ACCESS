@@ -32,6 +32,8 @@ jobs:
         run: |
           npm ci || npm install
           npm i -g cordova@12
+working-directory: _build/app
+
 
       - name: Cordova Android build (debug)
         run: |
