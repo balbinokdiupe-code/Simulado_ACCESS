@@ -18,15 +18,23 @@ jobs: build: runs-on: ubuntu-24.04 env:
         _build/app run: |
           npm ci || npm install npm i -g 
           cordova@12
-      - name: Cordova Android build (debug) 
-        working-directory: _build/app run: |
-          cordova telemetry off || true 
+ - name: Debug – listar arquivos do projeto - 
+      name: Cordova Android build (debug)
+    working-directory: _build/app 
+          working-directory: _build/app run: 
+          | cordova telemetry off || true 
           cordova platform rm android || true 
           cordova platform add android@11 
           cordova build android --debug 
           --no-interactive
-      - name: Upload APK (debug) uses: 
+    run: | - name: Upload APK (debug) uses: 
         actions/upload-artifact@v4 with:
-          name: app-debug-apk path: 
-          _build/app/platforms/android/app/build/outputs/apk/debug/app-debug.apk
+      echo "PWD:" name: app-debug-apk path: 
+          _build/app/platforms/android/app/build/outputs/apk/debug/app-debug.apk 
           if-no-files-found: error
+      pwd echo "RAIZ (_build/app):" ls -la 
+      echo "WWW:" ls -la www || true echo 
+      "HEAD config.xml:" sed -n '1,40p' 
+      config.xml || true echo "HEAD 
+      package.json:"
+      sed -n '1,60p' package.json || true
